@@ -32,9 +32,9 @@ public:
     }
 };
 
-int main() {
-    DeviceState device;
-    device.EnableMonitoring();
-    std::cout << "Temperature: " << device.GetTemperature() << std::endl;
-    return 0;
-}
+// int main() {
+//     DeviceState device;
+//     device.EnableMonitoring();
+//     std::cout << "Temperature: " << device.GetTemperature() << std::endl;
+//     return 0;
+// }

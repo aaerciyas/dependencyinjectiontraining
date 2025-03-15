@@ -1,0 +1,24 @@
+# CMake build artifacts
+/build/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+test_sensor_subscriber
+
+# Executable files
+*.exe
+*.out
+*.app
+
+# Temporary files
+*.tmp
+*.log
+*.swp
+*.bak
+*.old
+
+# OS-specific files
+.DS_Store
+Thumbs.db
