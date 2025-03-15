@@ -4,20 +4,32 @@
 
 class Subscriber {
 public:
-    Subscriber(bool& sensor) {
+    explicit Subscriber(bool& sensor) : sensorRef(sensor) {
         // Assume there is a function to subscribe to the sensor
-        sensor = false;
+        sensorRef = true;
     }
+private:
+    bool& sensorRef;
 };
 
 class DeviceState {
 private:
     bool isTemperatureSensorEnabled{false};
-    int temperature;
-    std::unique_ptr<Subscriber> subscriber;
+    int temperature{-999};
+    Subscriber* subscriber{nullptr};
 public:
+    DeviceState() {
+        EnableMonitoring();
+    }
+
+    ~DeviceState() {
+        delete subscriber;
+    }
+
     void EnableMonitoring() {
-        subscriber = std::make_unique<Subscriber>(isTemperatureSensorEnabled);
+        if(!subscriber) {
+            subscriber = new Subscriber(isTemperatureSensorEnabled);
+        }
     }
 
     int GetTemperature() {
@@ -31,10 +43,3 @@ public:
         return temperature;
     }
 };
-
-// int main() {
-//     DeviceState device;
-//     device.EnableMonitoring();
-//     std::cout << "Temperature: " << device.GetTemperature() << std::endl;
-//     return 0;
-// }

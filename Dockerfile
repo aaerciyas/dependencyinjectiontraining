@@ -11,9 +11,9 @@ RUN cd /usr/src/gtest/ && \
 
 ### Running the container with copying the files
 ### Dockerfile needs to be build after every change
-COPY hardcoded_dependency /app
+# COPY hardcoded_dependency /app
 
-RUN cmake .
-RUN make
+# RUN cmake .
+# RUN make
 
-CMD ["./main"]
+# CMD ["./test_sensor_subscriber"]

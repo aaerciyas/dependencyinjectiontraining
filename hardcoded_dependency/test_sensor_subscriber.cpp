@@ -11,7 +11,6 @@ TEST_F(DeviceStateTest, TemperatureSensorDisabled) {
 }
 
 TEST_F(DeviceStateTest, TemperatureSensorEnabled) {
-    device.EnableMonitoring();
     EXPECT_EQ(device.GetTemperature(), 25);
 }
 

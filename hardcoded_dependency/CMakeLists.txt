@@ -12,4 +12,4 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 add_executable(test_sensor_subscriber test_sensor_subscriber.cpp)
 
 # Link Google Test framework to the test executable
-target_link_libraries(main GTest::GTest GTest::Main)
+target_link_libraries(test_sensor_subscriber GTest::GTest GTest::Main)
